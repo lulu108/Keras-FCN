@@ -1,4 +1,4 @@
-# Keras-FCN
+# Keras-FCN-hll
 
 This is a Keras implementation of the fully convolutional network outlined in <a href="https://arxiv.org/abs/1605.06211">Shelhamer et al. (2016)</a>, which performs semantic image segmentation on the Pascal VOC dataset.
 My hope is that this document will be readable to people outside of deep learning, such as myself, who are looking to learn about fully convolutional networks.
@@ -18,10 +18,10 @@ For an introduction, see <a href="https://nanonets.com/blog/semantic-image-segme
 As an example, below is an image and its labelled pixels.
 
 | <img src="assets/rider.jpg" alt="biker" width=400> | <img src="assets/rider_label.png" alt="true label" width=400> |
-|:---:|:---:|
-| Image | True label |
+| :------------------------------------------------: | :-----------------------------------------------------------: |
+|                       Image                        |                          True label                           |
 
-A **fully convolutional network (FCN)** is an artificial neural network that performs semantic segmentation. 
+A **fully convolutional network (FCN)** is an artificial neural network that performs semantic segmentation.
 The bottom layers of a FCN are those of a convolutional neural network (CNN), usually taken from a pre-trained network like VGGNet or GoogLeNet.
 The purpose of these layers is to perform classification on subregions of the image.
 The top layers of a FCN are **transposed convolution/deconvolution** layers, which upsample the results of the classification to the resolution of the original image.
@@ -74,17 +74,17 @@ We trained each FCN32, FCN16, and FCN8 model from scratch for 25 epochs using th
 Below are the predicted labels for an example image above, which is in the validation set.
 
 | <img src="assets/rider_label.png" alt="true label" width=300> | <img src="assets/fcn32.png" alt="fcn32 pred" width=300> | <img src="assets/fcn16.png" alt="fcn16 pred" width=300> | <img src="assets/fcn8.png" alt="fcn8 pred" width=300> |
-| :--: | :--: | :--: | :--: |
-| True label | FCN32 prediction | FCN16 prediction | FCN8 prediction |
-| Pixel accuracy:| 0.968 | 0.980 | 0.972 |
-| Mean IoU: | 0.774 | 0.854 | 0.787 |
+| :-----------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :---------------------------------------------------: |
+|                          True label                           |                    FCN32 prediction                     |                    FCN16 prediction                     |                    FCN8 prediction                    |
+|                        Pixel accuracy:                        |                          0.968                          |                          0.980                          |                         0.972                         |
+|                           Mean IoU:                           |                          0.774                          |                          0.854                          |                         0.787                         |
 
 The performance of these models on the validation set are summarized below.
 
-| Model | FCN32 | FCN16 | FCN8 |
-| :--: | :--: | :--: | :--: |
-| Pixel accuracy: | 0.896 | 0.899 | 0.898 | 
-| Mean IoU: | 0.568 | 0.575 | 0.576 |
+|      Model      | FCN32 | FCN16 | FCN8  |
+| :-------------: | :---: | :---: | :---: |
+| Pixel accuracy: | 0.896 | 0.899 | 0.898 |
+|    Mean IoU:    | 0.568 | 0.575 | 0.576 |
 
 <img src="assets/loss.png" alt="loss" width=400> <img src="assets/meaniou.png" alt="meaniou" width=400>
 
