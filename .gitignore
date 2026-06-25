@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# TensorFlow / Keras checkpoints
+checkpoints/**/*.h5
+checkpoints/**/*.hdf5
+checkpoints/**/*.keras
+checkpoints/**/*.pb
+checkpoints/**/logs/
+
+# TFRecord data files
+data/tfrecords/*.tfrecords
+
+# Predicted masks (large output)
+results/pred_21class/*/
+results/pred_binary/*/
+results/visual_compare_21class/*/
+results/visual_compare_binary/*/
+
+# TensorBoard logs
+results/logs/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
