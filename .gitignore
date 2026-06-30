@@ -3,24 +3,20 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
-# TensorFlow / Keras checkpoints
-checkpoints/**/*.h5
-checkpoints/**/*.hdf5
-checkpoints/**/*.keras
-checkpoints/**/*.pb
-checkpoints/**/logs/
+# Local datasets and generated training data
+data/**
+!data/**/
+!data/**/.gitkeep
 
-# TFRecord data files
-data/tfrecords/*.tfrecords
-
-# Predicted masks (large output)
-results/pred_21class/*/
-results/pred_binary/*/
-results/visual_compare_21class/*/
-results/visual_compare_binary/*/
-
-# TensorBoard logs
-results/logs/
+# TensorFlow / Keras checkpoints and model weights
+checkpoints/
+*.h5
+*.hdf5
+*.keras
+*.pb
+*.ckpt
+*.tfrecord
+*.tfrecords
 
 # IDE
 .vscode/
